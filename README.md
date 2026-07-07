@@ -22,3 +22,45 @@ Supabase — Create a project, run supabase/schema.sql in the SQL Editor, then a
 Cloudinary — Upload photos, note the public_id, and insert rows into the photos table with matching alt_text
 Copy .env.example → .env.local and fill in your credentials
 Until those are configured, the site uses the built-in demo gallery so you can preview everything right away.
+
+C:\Users\kaush\Projects\startup-valuator\
+├── package.json              # Dependencies & scripts (npm run dev)
+├── next.config.ts            # Next.js config (image domains)
+├── tsconfig.json             # TypeScript config
+├── postcss.config.mjs        # Tailwind/PostCSS
+├── eslint.config.mjs
+├── .env.example              # Env var template (Supabase, Cloudinary)
+├── .gitignore
+│
+├── src/                      # ← Most of your app code
+│   ├── app/                  # Pages & routes
+│   │   ├── page.tsx          # Homepage (gallery)
+│   │   ├── layout.tsx        # Site shell, SEO metadata
+│   │   ├── globals.css       # Global styles
+│   │   ├── about/page.tsx    # About page
+│   │   ├── photo/[slug]/     # Individual photo pages
+│   │   └── api/photos/       # JSON API endpoint
+│   │
+│   ├── components/           # UI components
+│   │   ├── CategoryFilter.tsx  # Maternity / City / Landscape menu
+│   │   ├── PhotoGallery.tsx
+│   │   ├── PhotoCard.tsx
+│   │   ├── PhotoDetail.tsx
+│   │   ├── Lightbox.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Header.tsx
+│   │   └── Footer.tsx
+│   │
+│   ├── lib/                  # Data & integrations
+│   │   ├── photos.ts         # Demo photos + category list
+│   │   ├── supabase.ts       # Supabase client
+│   │   └── cloudinary.ts     # Cloudinary image URLs
+│   │
+│   └── types/
+│       └── photo.ts          # TypeScript types
+│
+├── supabase/
+│   └── schema.sql            # Database schema for Supabase
+│
+├── node_modules/             # Installed packages (auto-generated)
+└── .next/                    # Next.js build cache (auto-generated)
