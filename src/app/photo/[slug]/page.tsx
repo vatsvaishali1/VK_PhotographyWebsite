@@ -45,7 +45,7 @@ export default async function PhotoPage({ params }: PhotoPageProps) {
   if (!photo) notFound();
 
   return (
-    <div className="mx-auto max-w-7xl px-6 py-12">
+    <div className="mx-auto max-w-7xl px-6 pt-28 pb-12">
       <PhotoDetail photo={photo} />
     </div>
   );

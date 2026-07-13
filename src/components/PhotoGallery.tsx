@@ -22,7 +22,7 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
       </div>
 
       {filtered.length === 0 ? (
-        <p className="py-20 text-center text-white/40">
+        <p className="py-20 text-center text-neutral-600">
           No photos in this category yet.
         </p>
       ) : (
