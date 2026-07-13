@@ -42,3 +42,5 @@ create policy "Public read access"
 --   '2025-06-01',
 --   true
 -- );
+
+-- Also run supabase/leads.sql to enable contact form lead capture.

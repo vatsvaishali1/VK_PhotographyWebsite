@@ -13,7 +13,7 @@ export default function PhotoCard({ photo, priority = false }: PhotoCardProps) {
   return (
     <Link
       href={`/photo/${photo.slug}`}
-      className="group relative mb-4 block break-inside-avoid overflow-hidden rounded-sm bg-neutral-900"
+      className="group relative mb-4 block break-inside-avoid overflow-hidden bg-neutral-500/25"
     >
       <Image
         src={photo.thumbnailUrl}
