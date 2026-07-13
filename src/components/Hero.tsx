@@ -10,7 +10,7 @@ export default function Hero({ featuredPhotos }: HeroProps) {
   const heroPhoto = featuredPhotos[0];
 
   return (
-    <section className="relative flex min-h-[70vh] items-end overflow-hidden">
+    <section className="relative flex min-h-[90vh] items-end overflow-hidden">
       {heroPhoto && (
         <Image
           src={heroPhoto.imageUrl}

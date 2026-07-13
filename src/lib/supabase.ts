@@ -45,7 +45,7 @@ export async function fetchPhotoBySlugFromDb(
     .from("photos")
     .select("*")
     .eq("slug", slug)
-    .single();
+    .maybeSingle();
 
   if (error) {
     console.error("Supabase fetch error:", error.message);
