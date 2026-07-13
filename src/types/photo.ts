@@ -8,6 +8,10 @@ export interface Photo {
   alt_text: string;
   category: PhotoCategory;
   cloudinary_public_id: string;
+  image_url?: string | null;
+  image_path?: string | null;
+  thumbnail_url?: string | null;
+  thumbnail_path?: string | null;
   width: number;
   height: number;
   location: string | null;

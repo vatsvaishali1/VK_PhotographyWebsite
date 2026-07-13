@@ -49,7 +49,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-neutral-950 text-white antialiased">
+      <body
+        className="min-h-screen bg-neutral-950 text-white antialiased"
+        suppressHydrationWarning
+      >
         <Header />
         <main className="min-h-screen pt-[73px]">{children}</main>
         <Footer />
