@@ -19,6 +19,10 @@ create index if not exists leads_email_idx on leads (email);
 
 alter table leads enable row level security;
 
+-- RLS policies only apply after base table privileges are granted.
+-- Without this, anon/authenticated get "permission denied for table leads".
+grant insert on leads to anon, authenticated;
+
 -- Visitors can submit leads from the website (via anon key / API).
 drop policy if exists "Public can insert leads" on leads;
 create policy "Public can insert leads"

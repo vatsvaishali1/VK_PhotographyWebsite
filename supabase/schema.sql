@@ -23,8 +23,14 @@ create index if not exists photos_featured_idx on photos (featured) where featur
 
 alter table photos enable row level security;
 
+-- RLS policies only apply after base table privileges are granted.
+-- Without this, anon/authenticated get 0 rows back (no error) even with a matching policy.
+grant select on photos to anon, authenticated;
+
+drop policy if exists "Public read access" on photos;
 create policy "Public read access"
   on photos for select
+  to anon, authenticated
   using (true);
 
 -- Example insert (replace cloudinary_public_id with your uploaded image ID):
