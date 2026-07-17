@@ -12,7 +12,7 @@ interface PhotoCardProps {
 export default function PhotoCard({ photo, priority = false }: PhotoCardProps) {
   return (
     <Link
-      href={`/photo/${photo.slug}`}
+      href={`/photo/${encodeURIComponent(photo.slug)}`}
       className="group relative mb-4 block break-inside-avoid overflow-hidden rounded-sm bg-neutral-900"
     >
       <Image

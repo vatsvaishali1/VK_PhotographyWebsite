@@ -4,6 +4,15 @@
   --font-serif: var(--font-cormorant), Georgia, serif;
   --font-display: var(--font-italiana), var(--font-cormorant), Georgia, serif;
   --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  --color-ink: #12100e;
+  --color-surface: #1a1714;
+  --color-surface-soft: #24201c;
+  --color-panel: #9a9186;
+  --color-panel-deep: #7f766c;
+  --color-panel-soft: #aea59a;
+  --color-mist: #e8e2d8;
+  --color-accent: #c4a574;
 }
 
 html {
@@ -12,14 +21,14 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: #0a0a0a;
-  color: #fafafa;
+  background-color: var(--color-surface);
+  color: var(--color-mist);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(196, 165, 116, 0.28);
   color: #fff;
 }
 
@@ -29,6 +38,32 @@ body {
 
 .font-display {
   font-family: var(--font-display);
+}
+
+.site-bridge-hero {
+  height: 9rem;
+  background: linear-gradient(
+    180deg,
+    var(--color-surface) 0%,
+    #3f3a34 42%,
+    var(--color-panel) 100%
+  );
+}
+
+@media (min-width: 640px) {
+  .site-bridge-hero {
+    height: 11rem;
+  }
+}
+
+.site-bridge-footer {
+  height: 6.5rem;
+  background: linear-gradient(
+    180deg,
+    var(--color-panel) 0%,
+    #3f3a34 55%,
+    var(--color-surface) 100%
+  );
 }
 
 @keyframes hero-image-in {

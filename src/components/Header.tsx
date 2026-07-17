@@ -11,7 +11,7 @@ export default async function Header() {
   const logoPhoto = await getPhotoBySlug("profilePicture");
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-neutral-950/90 via-neutral-950/50 to-transparent">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-[var(--color-surface)]/85 via-[var(--color-surface)]/35 to-transparent">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         <Link href="/" className="group flex items-center gap-3">
           {logoPhoto ? (

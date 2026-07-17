@@ -22,7 +22,7 @@ export default function CategoryFilter({
         <div key={cat.value} className="flex items-center gap-1 sm:gap-2">
           {index > 0 && (
             <span
-              className="mx-1 hidden h-3 w-px bg-neutral-900/30 sm:block"
+              className="mx-1 hidden h-3 w-px bg-[var(--color-ink)]/30 sm:block"
               aria-hidden="true"
             />
           )}
@@ -32,8 +32,8 @@ export default function CategoryFilter({
             aria-pressed={active === cat.value}
             className={`px-4 py-2 font-serif text-sm font-medium tracking-[0.12em] uppercase transition-colors duration-300 md:text-base ${
               active === cat.value
-                ? "text-neutral-900 underline decoration-neutral-900/50 decoration-1 underline-offset-8"
-                : "text-neutral-700 hover:text-neutral-900"
+                ? "text-[var(--color-ink)] underline decoration-[var(--color-ink)]/45 decoration-1 underline-offset-8"
+                : "text-[var(--color-ink)]/55 hover:text-[var(--color-ink)]"
             }`}
           >
             {cat.label}
