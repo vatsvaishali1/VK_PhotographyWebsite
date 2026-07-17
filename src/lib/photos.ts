@@ -88,10 +88,32 @@ export async function getAllPhotos(): Promise<PhotoWithUrl[]> {
   return (dbPhotos ?? []).map(enrichPhoto);
 }
 
+const GALLERY_CATEGORIES = new Set<PhotoCategory>([
+  "maternity",
+  "city",
+  "landscape",
+]);
+
+/** Photos safe to show/navigate in the public gallery. */
+export async function getGalleryPhotos(): Promise<PhotoWithUrl[]> {
+  const all = await getAllPhotos();
+  return all.filter(
+    (photo) =>
+      GALLERY_CATEGORIES.has(photo.category) &&
+      Boolean(photo.slug?.trim()) &&
+      // Spaces/special URL chars break /photo/[slug] routes
+      /^[a-zA-Z0-9_-]+$/.test(photo.slug) &&
+      Boolean(photo.imageUrl)
+  );
+}
+
 export async function getPhotoBySlug(
   slug: string
 ): Promise<PhotoWithUrl | null> {
-  const dbPhoto = await fetchPhotoBySlugFromDb(slug);
+  const normalized = decodeURIComponent(slug).trim();
+  if (!normalized) return null;
+
+  const dbPhoto = await fetchPhotoBySlugFromDb(normalized);
   return dbPhoto ? enrichPhoto(dbPhoto) : null;
 }
 
@@ -103,7 +125,7 @@ export async function getPhotosByCategory(
 }
 
 export async function getFeaturedPhotos(): Promise<PhotoWithUrl[]> {
-  const all = await getAllPhotos();
+  const all = await getGalleryPhotos();
   return all.filter((p) => p.featured);
 }
 

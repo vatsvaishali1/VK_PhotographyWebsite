@@ -76,7 +76,7 @@ export default function RootLayout({
       className={`${cormorant.variable} ${italiana.variable} ${inter.variable}`}
     >
       <body
-        className="min-h-screen bg-neutral-950 text-white antialiased"
+        className="min-h-screen bg-[var(--color-surface)] text-[var(--color-mist)] antialiased"
         suppressHydrationWarning
       >
         <Header />

@@ -104,7 +104,7 @@ export default function ContactEmailButton({
             aria-modal="true"
             aria-labelledby={titleId}
             aria-describedby={descId}
-            className="w-full max-w-md border border-neutral-900/10 bg-[#c4bcb2] p-6 shadow-2xl shadow-black/40 md:p-8"
+            className="w-full max-w-md border border-[var(--color-ink)]/10 bg-[var(--color-panel)] p-6 shadow-2xl shadow-black/40 md:p-8"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-start justify-between gap-4">
@@ -139,7 +139,7 @@ export default function ContactEmailButton({
                 <button
                   type="button"
                   onClick={closeModal}
-                  className="inline-flex items-center bg-neutral-900 px-6 py-3 text-[11px] font-medium tracking-[0.2em] uppercase text-[#c4bcb2] transition-colors hover:bg-neutral-800"
+                  className="inline-flex items-center bg-[var(--color-ink)] px-6 py-3 text-[11px] font-medium tracking-[0.2em] uppercase text-[var(--color-mist)] transition-colors hover:bg-black"
                 >
                   Close
                 </button>
@@ -157,7 +157,7 @@ export default function ContactEmailButton({
                     maxLength={120}
                     autoFocus
                     disabled={status === "submitting"}
-                    className="mt-2 w-full border border-neutral-900/15 bg-[#ddd6cc] px-3 py-2.5 text-sm text-neutral-900 outline-none transition-colors placeholder:text-neutral-500 focus:border-neutral-900/40 disabled:opacity-60"
+                    className="mt-2 w-full border border-[var(--color-ink)]/15 bg-[var(--color-mist)]/55 px-3 py-2.5 text-sm text-[var(--color-ink)] outline-none transition-colors placeholder:text-[var(--color-ink)]/40 focus:border-[var(--color-ink)]/40 disabled:opacity-60"
                     placeholder="Your name"
                   />
                 </label>
@@ -172,7 +172,7 @@ export default function ContactEmailButton({
                     required
                     maxLength={254}
                     disabled={status === "submitting"}
-                    className="mt-2 w-full border border-neutral-900/15 bg-[#ddd6cc] px-3 py-2.5 text-sm text-neutral-900 outline-none transition-colors placeholder:text-neutral-500 focus:border-neutral-900/40 disabled:opacity-60"
+                    className="mt-2 w-full border border-[var(--color-ink)]/15 bg-[var(--color-mist)]/55 px-3 py-2.5 text-sm text-[var(--color-ink)] outline-none transition-colors placeholder:text-[var(--color-ink)]/40 focus:border-[var(--color-ink)]/40 disabled:opacity-60"
                     placeholder="you@email.com"
                   />
                 </label>
@@ -187,7 +187,7 @@ export default function ContactEmailButton({
                     maxLength={5000}
                     rows={4}
                     disabled={status === "submitting"}
-                    className="mt-2 w-full resize-none border border-neutral-900/15 bg-[#ddd6cc] px-3 py-2.5 text-sm text-neutral-900 outline-none transition-colors placeholder:text-neutral-500 focus:border-neutral-900/40 disabled:opacity-60"
+                    className="mt-2 w-full resize-none border border-[var(--color-ink)]/15 bg-[var(--color-mist)]/55 px-3 py-2.5 text-sm text-[var(--color-ink)] outline-none transition-colors placeholder:text-[var(--color-ink)]/40 focus:border-[var(--color-ink)]/40 disabled:opacity-60"
                     placeholder="Tell me about your session or inquiry..."
                   />
                 </label>
@@ -202,7 +202,7 @@ export default function ContactEmailButton({
                   <button
                     type="submit"
                     disabled={status === "submitting"}
-                    className="inline-flex items-center bg-neutral-900 px-6 py-3 text-[11px] font-medium tracking-[0.2em] uppercase text-[#c4bcb2] transition-colors hover:bg-neutral-800 disabled:opacity-60"
+                    className="inline-flex items-center bg-[var(--color-ink)] px-6 py-3 text-[11px] font-medium tracking-[0.2em] uppercase text-[var(--color-mist)] transition-colors hover:bg-black disabled:opacity-60"
                   >
                     {status === "submitting" ? "Sending..." : "Send message"}
                   </button>
